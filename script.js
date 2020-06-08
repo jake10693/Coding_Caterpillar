@@ -18,58 +18,60 @@
                 //Move Right
             if(e.keyCode==39){
                
-                let commandRight = {pos: 'x', operator: '+', value: 5}
+                let commandRight = {pos: 'x', operator: '+', value: 20}
                 directions.push(commandRight)
                 console.log(directions)
             }
             //Move Left
             if(e.keyCode==37){
-                let commandLeft = {pos: 'x', operator: '-', value: 5}
+                let commandLeft = {pos: 'x', operator: '-', value: 20}
                 directions.push(commandLeft)
                 console.log(directions)
         }   
             // Move Up
             if(e.keyCode==38){
-                let commandUp = {pos: 'y', operator: '-', value: 5}
+                let commandUp = {pos: 'y', operator: '-', value: 20}
                 directions.push(commandUp)
                 console.log(directions)
             }
             //Move Down
-            if(e.keyCode==40){
-                let commandDown = {pos: 'y', operator: '+', value: 5}
+            if(e.keyCode==40 || document.getElementById('downG').onclick){
+                let commandDown = {pos: 'y', operator: '+', value: 20}
                 directions.push(commandDown)
                 console.log(directions)
         }
-            if(e.keyCode==13){
-                for (let i = 0; i < directions.length; i++){
-                    if(directions[i].pos === 'x'){
-                        if(directions[i].operator === '+'){
-                            moveRight = xPos+=5
+            if(e.keyCode==13)
+            {
+                for (let i = 0; i < directions.length; i++
+                    )
+                    {
+                        if(directions[i].pos === 'x')
+                        {
+                            if(directions[i].operator === '+')
+                            {
+                                moveRight = xPos+=20
+                            }
+                            if(directions[i].operator === '-')
+                            {
+                                moveLeft = xPos-=20
+                            }
+
                         }
-                        if(directions[i].operator === '-'){
-                            moveLeft = xPos-=5
+                            
+                        if(directions[i].pos === 'y')
+                        {
+                                if(directions[i].operator === '+')
+                                {
+                                    moveUp = yPos+=20
+                                }
+                                if(directions[i].operator === '-')
+                                {
+                                    moveDown = yPos-=20
+                            }
+
                         }
-                        
                     }
-                    if(directions[i].pos === 'y'){
-                        if(directions[0].operator === '+'){
-                            moveUp = yPos+=5
-                        }
-                        if(directions[i].operator === '-'){
-                            moveDown = yPos-=5
-                        }
-                        
-                    }
-                    // if(){
-
-                    // }
-                    // if(){
-
-                    // }
-                    // if(){
-
-                    // }
-                }
+                    directions.splice(0, directions.length)
             }
         
         canvas.width=canvas.width;
@@ -91,14 +93,14 @@
 
 
 //     if(e.keyCode==39){
-//        moveRight = xPos+=5;
+//        moveRight = xPos+=20;
 //    }
 //    if(e.keyCode==37){
-//        xPos-=5;
+//        xPos-=20;
 // }
 //    if(e.keyCode==38){
-//        yPos-=5;
+//        yPos-=20;
 //    }
 //    if(e.keyCode==40){
-//        yPos+=5;
+//        yPos+=20;
 // } 
