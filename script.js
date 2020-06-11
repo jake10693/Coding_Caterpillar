@@ -9,6 +9,7 @@
         let moveUp;
         let moveDown;
 
+        
         context.rect(xPos, yPos, 50, 50);
         context.stroke();
 
@@ -35,43 +36,40 @@
                 console.log(directions)
             }
             //Move Down
-            if(e.keyCode==40 || document.getElementById('downG').onclick){
+            if(e.keyCode==40){
                 let commandDown = {pos: 'y', operator: '+', value: 20}
                 directions.push(commandDown)
                 console.log(directions)
         }
             if(e.keyCode==13)
             {
-                for (let i = 0; i < directions.length; i++
-                    )
-                    {
-                        if(directions[i].pos === 'x')
-                        {
-                            if(directions[i].operator === '+')
-                            {
+                for (let i = 0; i < directions.length; i++)
+                    { 
+                        if(directions[i].pos === 'x'){
+                            if(directions[i].operator === '+'){
                                 moveRight = xPos+=20
                             }
-                            if(directions[i].operator === '-')
-                            {
+                            if(directions[i].operator === '-'){
                                 moveLeft = xPos-=20
                             }
-
-                        }
-                            
-                        if(directions[i].pos === 'y')
-                        {
-                                if(directions[i].operator === '+')
-                                {
+                        }                       
+                        if(directions[i].pos === 'y'){
+                                if(directions[i].operator === '+'){
                                     moveUp = yPos+=20
                                 }
-                                if(directions[i].operator === '-')
-                                {
+                                if(directions[i].operator === '-'){
                                     moveDown = yPos-=20
+
                             }
 
                         }
+                        context.rect(xPos, yPos, 50, 50);
                     }
-                    directions.splice(0, directions.length)
+                    
+                        
+                    
+                    // directions.splice(0, directions.length)
+                    directions.length = 0
             }
         
         canvas.width=canvas.width;
