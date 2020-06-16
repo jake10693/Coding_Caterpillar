@@ -24,6 +24,19 @@ function myLoop() {
 }
 
 
+//     if(e.keyCode==39){
+//        moveRight = xPos+=20;
+//    }
+//    if(e.keyCode==37){
+//        moveLeft xPos-=20;
+// }
+//    if(e.keyCode==38){
+//        moveUp yPos-=20;
+//    }
+//    if(e.keyCode==40){
+//        moveDown yPos+=20;
+// } 
+
 
 
 // Entire script file that I last ended with. Still could not get the  

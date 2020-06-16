@@ -43,34 +43,40 @@
         }
             if(e.keyCode==13)
             {
-                for (let i = 0; i < directions.length; i++)
-                    { 
-                        if(directions[i].pos === 'x'){
-                            if(directions[i].operator === '+'){
-                                moveRight = xPos+=20
-                            }
-                            if(directions[i].operator === '-'){
-                                moveLeft = xPos-=20
-                            }
-                        }                       
-                        if(directions[i].pos === 'y'){
-                                if(directions[i].operator === '+'){
-                                    moveUp = yPos+=20
-                                }
-                                if(directions[i].operator === '-'){
-                                    moveDown = yPos-=20
-
-                            }
-
+                function myLoop() { 
+                    console.log(directions)
+                    setTimeout(function () {
+                        console.log(directions)
+                      for (let i = 0; i < directions.length; i++) {
+                        if (directions[i].pos === "x") {
+                          if (directions[i].operator === "+") {
+                            moveRight = xPos += 20;
+                          }
+                          if (directions[i].operator === "-") {
+                            moveLeft = xPos -= 20;
+                          }
                         }
-                        context.rect(xPos, yPos, 50, 50);
+                        if (directions[i].pos === "y") {
+                          if (directions[i].operator === "+") {
+                            moveUp = yPos += 20;
+                          }
+                          if (directions[i].operator === "-") {
+                            moveDown = yPos -= 20;
+                          }
+                        }
+                        context.rect(xPos, yPos, 50, 50)
                     }
-                    
-                        
-                    
-                    // directions.splice(0, directions.length)
-                    directions.length = 0
-            }
+                }, 3000);
+            } 
+            myLoop();
+            
+            
+            
+            
+            // directions.splice(0, directions.length)
+            console.log(directions)
+        }
+        directions.length = 0
         
         canvas.width=canvas.width;
         context.rect(xPos, yPos, 50, 50);
@@ -79,26 +85,3 @@
     }
     
     document.onkeydown = recordMove;
-
-
-
-
-
-
-// enter = key code 13
-//     Blocks of code that may come in handy during development        
-
-
-
-//     if(e.keyCode==39){
-//        moveRight = xPos+=20;
-//    }
-//    if(e.keyCode==37){
-//        xPos-=20;
-// }
-//    if(e.keyCode==38){
-//        yPos-=20;
-//    }
-//    if(e.keyCode==40){
-//        yPos+=20;
-// } 
