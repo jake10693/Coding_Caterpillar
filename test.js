@@ -72,8 +72,6 @@ function myLoop() {
                 }
                 
             }
-            context.rect(xPos, yPos, 50, 50);
-            context.stroke();
             i++;
             if (i < directions.length) {
                 myLoop();             
