@@ -13,80 +13,80 @@ let moveDown;
 context.rect(xPos, yPos, 50, 50);
 context.stroke();
 
-function recordMove(e){
+function recordMove(e) {
 
-        //alert(e.Code);
-        //Move Right
-    if(e.keyCode==39){
-       
-        let commandRight = {pos: 'x', operator: '+', value: 20}
+    //alert(e.Code);
+    //Move Right
+    if (e.keyCode == 39) {
+
+        let commandRight = { pos: 'x', operator: '+', value: 20 }
         directions.push(commandRight)
         console.log(directions)
     }
     //Move Left
-    if(e.keyCode==37){
-        let commandLeft = {pos: 'x', operator: '-', value: 20}
+    if (e.keyCode == 37) {
+        let commandLeft = { pos: 'x', operator: '-', value: 20 }
         directions.push(commandLeft)
         console.log(directions)
-}   
+    }
     // Move Up
-    if(e.keyCode==38){
-        let commandUp = {pos: 'y', operator: '-', value: 20}
+    if (e.keyCode == 38) {
+        let commandUp = { pos: 'y', operator: '-', value: 20 }
         directions.push(commandUp)
         console.log(directions)
     }
     //Move Down
-    if(e.keyCode==40){
-        let commandDown = {pos: 'y', operator: '+', value: 20}
+    if (e.keyCode == 40) {
+        let commandDown = { pos: 'y', operator: '+', value: 20 }
         directions.push(commandDown)
         console.log(directions)
+    }
 }
-} 
-function myLoop() {           
-    setTimeout(function() {  
+function myLoop() {
+    setTimeout(function () {
         {
             // for (let i = 0; i < directions.length; i++)
-            if(directions[i].pos === 'x'){
-                if(directions[i].operator === '+'){
-                    moveRight = xPos+=20
+            if (directions[i].pos === 'x') {
+                if (directions[i].operator === '+') {
+                    moveRight = xPos += 20
                     context.rect(xPos, yPos, 50, 50);
                     context.stroke();
                 }
-                if(directions[i].operator === '-'){
-                    moveLeft = xPos-=20
+                if (directions[i].operator === '-') {
+                    moveLeft = xPos -= 20
                     context.rect(xPos, yPos, 50, 50);
                     context.stroke();
                 }
-            }                       
-            if(directions[i].pos === 'y'){
-                if(directions[i].operator === '+'){
-                    moveUp = yPos+=20
+            }
+            if (directions[i].pos === 'y') {
+                if (directions[i].operator === '+') {
+                    moveUp = yPos += 20
                     context.rect(xPos, yPos, 50, 50);
                     context.stroke();
                 }
-                if(directions[i].operator === '-'){
-                    moveDown = yPos-=20
+                if (directions[i].operator === '-') {
+                    moveDown = yPos -= 20
                     context.rect(xPos, yPos, 50, 50);
                     context.stroke();
-                    
+
                 }
-                
+
             }
             i++;
             if (i < directions.length) {
-                myLoop();             
-            }                       
+                myLoop();
+            }
         }, 3000)
-    }
 }
-if(e.keyCode==13){
+}
+if (e.keyCode == 13) {
     myLoop()
 }
 
-            
-            // directions.splice(0, directions.length)
-            directions.length = 0
-    
+
+// directions.splice(0, directions.length)
+directions.length = 0
+
 document.onkeydown = recordMove;
 
 
