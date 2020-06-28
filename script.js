@@ -47,22 +47,31 @@
                         if(directions[i].pos === 'x'){
                             if(directions[i].operator === '+'){
                                 moveRight = xPos+=20
+                                context.rect(xPos, yPos, 50, 50);
+                                context.stroke();
                             }
                             if(directions[i].operator === '-'){
                                 moveLeft = xPos-=20
+                                context.rect(xPos, yPos, 50, 50);
+                                context.stroke();
                             }
                         }                       
                         if(directions[i].pos === 'y'){
                                 if(directions[i].operator === '+'){
                                     moveUp = yPos+=20
+                                    context.rect(xPos, yPos, 50, 50);
+                                     context.stroke();
                                 }
                                 if(directions[i].operator === '-'){
                                     moveDown = yPos-=20
+                                    context.rect(xPos, yPos, 50, 50);
+                                    context.stroke();
 
                             }
 
                         }
                         context.rect(xPos, yPos, 50, 50);
+                        context.stroke();
                     }
                     
                         
