@@ -1,0 +1,23 @@
+{
+  "name": "Coding_Caterpillar",
+  "version": "1.0.0",
+  "description": "[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jake10693/coding-caterpillar)",
+  "main": "script.js",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jake10693/Coding_Caterpillar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jake10693/Coding_Caterpillar/issues"
+  },
+  "homepage": "https://github.com/jake10693/Coding_Caterpillar#readme"
+}
