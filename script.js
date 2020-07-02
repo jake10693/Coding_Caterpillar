@@ -15,7 +15,6 @@
 
         function recordMove(e){
 
-                //alert(e.Code);
                 //Move Right
             if(e.keyCode==39){
                
@@ -88,26 +87,3 @@
     }
     
     document.onkeydown = recordMove;
-
-
-
-
-
-
-// enter = key code 13
-//     Blocks of code that may come in handy during development        
-
-
-
-//     if(e.keyCode==39){
-//        moveRight = xPos+=20;
-//    }
-//    if(e.keyCode==37){
-//        xPos-=20;
-// }
-//    if(e.keyCode==38){
-//        yPos-=20;
-//    }
-//    if(e.keyCode==40){
-//        yPos+=20;
-// } 
