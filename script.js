@@ -17,26 +17,25 @@
 
                 //Move Right
             if(e.keyCode==39){
-               
-                let commandRight = {pos: 'x', operator: '+', value: 20}
+                let commandRight = {pos: 'x', operator: '+'}
                 directions.push(commandRight)
                 console.log(directions)
             }
             //Move Left
             if(e.keyCode==37){
-                let commandLeft = {pos: 'x', operator: '-', value: 20}
+                let commandLeft = {pos: 'x', operator: '-'}
                 directions.push(commandLeft)
                 console.log(directions)
         }   
             // Move Up
             if(e.keyCode==38){
-                let commandUp = {pos: 'y', operator: '-', value: 20}
+                let commandUp = {pos: 'y', operator: '-'}
                 directions.push(commandUp)
                 console.log(directions)
             }
             //Move Down
             if(e.keyCode==40){
-                let commandDown = {pos: 'y', operator: '+', value: 20}
+                let commandDown = {pos: 'y', operator: '+'}
                 directions.push(commandDown)
                 console.log(directions)
         }
