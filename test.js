@@ -14,27 +14,27 @@ let moveLeft;
 let moveUp;
 let moveDown;
 
-function rect(x,y,w,h) {
-    ctx.beginPath();
-    ctx.rect(x,y,w,h);
-    ctx.closePath();
-    ctx.fill();
-    }
+// function rect(x,y,w,h) {
+//     ctx.beginPath();
+//     ctx.rect(x,y,w,h);
+//     ctx.closePath();
+//     ctx.fill();
+//     }
 
-    function clear() {
-        ctx.clearRect(0, 0, WIDTH, HEIGHT);
-        ctx.drawImage(img, 0, 0);
-        }
+//     function clear() {
+//         ctx.clearRect(0, 0, WIDTH, HEIGHT);
+//         ctx.drawImage(img, 0, 0);
+//         }
 
 context.rect(xPos, yPos, 50, 50);
 context.stroke();
 
-function init() {
-    canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("2d");
-    img.src = "maze.gif";
-    return setInterval(draw, 10);
-    }
+// function init() {
+//     canvas = document.getElementById("canvas");
+//     ctx = canvas.getContext("2d");
+//     img.src = "./Assets/Map1.png";
+//     return setInterval(draw, 10);
+//     }
 
 
 function recordMove(e){
@@ -106,11 +106,11 @@ function recordMove(e){
             // directions.splice(0, directions.length)
             directions.length = 0
     }
-    function draw() {
-clear();
-ctx.fillStyle = "purple";
-rect(x, y, 15,15);
-}
+//     function draw() {
+// clear();
+// ctx.fillStyle = "purple";
+// rect(x, y, 15,15);
+// }
 
 canvas.width=canvas.width;
 context.rect(xPos, yPos, 50, 50);
