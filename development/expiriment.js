@@ -108,14 +108,14 @@ function recordMove(e){
     }   
     // Move Up
     if(e.keyCode==38){
-        let commandUp = {pos: 'y', operator: '-'}
-        directions.push(commandUp)
+        let commandDown = {pos: 'y', operator: '-'}
+        directions.push(commandDown)
         console.log(directions)
     }
     //Move Down
     if(e.keyCode==40){
-        let commandDown = {pos: 'y', operator: '+'}
-        directions.push(commandDown)
+        let commandUp = {pos: 'y', operator: '+'}
+        directions.push(commandUp)
         console.log(directions)
     }
     if(e.keyCode==13)
@@ -134,10 +134,10 @@ function recordMove(e){
                         }                       
                         if(direction.pos === 'y'){
                                 if(direction.operator === '+'){
-                                    moveup()
+                                    movedown()
                                 }
                                 if(direction.operator === '-'){
-                                    movedown()
+                                    moveup()
         
                             }
         
