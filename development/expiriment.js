@@ -1,9 +1,14 @@
 var myGamePiece;
 var myObstacle;
+const directions = [];
+let moveRight;
+let moveLeft;
+let moveUp;
+let moveDown;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
-    myObstacle  = new component(10, 200, "green", 300, 120);    
+    myGamePiece = new component(50, 50, "red", -1, 99);
+    myObstacle  = new component(50, 200, "green", 300, 100);    
     myGameArea.start();
 }
 
@@ -57,31 +62,97 @@ function updateGameArea() {
     if (myGamePiece.crashWith(myObstacle)) {
         myGameArea.stop();
     } else {
-        myGameArea.clear();
+        // myGameArea.clear();
         myObstacle.update();
-        myGamePiece.x += myGamePiece.speedX;
-        myGamePiece.y += myGamePiece.speedY;    
+        myGamePiece.x;
+        myGamePiece.y;    
         myGamePiece.update();
     }
 }
 
 function moveup() {
-    myGamePiece.speedY = -1; 
+    myGamePiece.y -= 50; 
 }
 
 function movedown() {
-    myGamePiece.speedY = 1; 
+    myGamePiece.y += 50; 
 }
 
 function moveleft() {
-    myGamePiece.speedX = -1; 
+    myGamePiece.x -= 50; 
 }
 
 function moveright() {
-    myGamePiece.speedX = 1; 
+    myGamePiece.x += 50; 
 }
 
-function clearmove() {
-    myGamePiece.speedX = 0; 
-    myGamePiece.speedY = 0; 
-}
+// function clearmove() {
+//     myGamePiece.speedX = 0; 
+//     myGamePiece.speedY = 0; 
+// }
+
+function recordMove(e){
+
+    //Move Right
+    if(e.keyCode==39){
+        let commandRight = {pos: 'x', operator: '+'}
+        directions.push(commandRight)
+        console.log(directions)
+        
+    }
+    //Move Left
+    if(e.keyCode==37){
+        let commandLeft = {pos: 'x', operator: '-'}
+        directions.push(commandLeft)
+        console.log(directions)
+    }   
+    // Move Up
+    if(e.keyCode==38){
+        let commandUp = {pos: 'y', operator: '-'}
+        directions.push(commandUp)
+        console.log(directions)
+    }
+    //Move Down
+    if(e.keyCode==40){
+        let commandDown = {pos: 'y', operator: '+'}
+        directions.push(commandDown)
+        console.log(directions)
+    }
+    if(e.keyCode==13)
+        {
+            directions.forEach((direction, i) => {
+                setTimeout(() => {
+                    
+                    { 
+                        if(direction.pos === 'x'){
+                            if(direction.operator === '+'){
+                                moveright()
+                            }
+                            if(direction.operator === '-'){
+                                moveright()
+                            }
+                        }                       
+                        if(direction.pos === 'y'){
+                                if(direction.operator === '+'){
+                                    moveup()
+                                }
+                                if(direction.operator === '-'){
+                                    movedown()
+        
+                            }
+        
+                        }
+                        // context.rect(xPos, yPos, 50, 50);
+                        // context.stroke();
+                    }
+                },i * 500)
+            })
+                
+                directions.length = 0
+        }
+    
+    // canvas.width=canvas.width;
+    // context.rect(xPos, yPos, 50, 50);
+    // context.stroke();
+    }
+    document.onkeydown = recordMove;
