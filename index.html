@@ -4,11 +4,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Canvas</title>
 </head>
-<body>
+<body onload="startGame()">
 
-    <canvas id="canvas" width="360" height='800'></canvas>
-    <button id='executeG' class='guiButton'>GO</button>
-    <br>
+    <!-- <canvas id="canvas" width='800' height='480'></canvas> -->
+    <!-- <br>
     <button id='upG' class='guiButton'>Up</button>
     <div>
         <button id='leftG' class='guiButton'>Left</button>
@@ -16,7 +15,14 @@
         <div>
             <button id='downG' class='guiButton'>Down</button>
     </div>
-</div>
-    <script src='script.js'></script>
+</div> -->
+<button id='executeG' class='guiButton' onclick="startGame()">Restart</button>
+<div style="text-align:center;width:480px;">
+    <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
+    <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
+    <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+    <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+  </div>
+    <script src='development/expiriment.js'></script>
 </body>
 </html>
