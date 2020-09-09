@@ -8,7 +8,9 @@ let moveDown;
 
 function startGame() {
     myGamePiece = new component(50, 50, "red", -1, 99);
-    myObstacle  = new component(50, 200, "green", 300, 100);    
+    myObstacle  = new component(50, 200, "green", 300, 100);
+ // Code needed here to clear text area content on restart
+ // Code needed here to clear the directions array on restart
     myGameArea.start();
 }
 
@@ -86,37 +88,41 @@ function moveright() {
     myGamePiece.x += 50; 
 }
 
-// function clearmove() {
-//     myGamePiece.speedX = 0; 
-//     myGamePiece.speedY = 0; 
-// }
-
 function recordMove(e){
 
     //Move Right
     if(e.keyCode==39){
+        let textArea = document.getElementById('userDirections');
         let commandRight = {pos: 'x', operator: '+'}
         directions.push(commandRight)
-        console.log(directions)
+        // console.log(directions)
+        textArea.value = JSON.stringify(directions)
+        
         
     }
     //Move Left
     if(e.keyCode==37){
         let commandLeft = {pos: 'x', operator: '-'}
+        let textArea = document.getElementById('userDirections');
         directions.push(commandLeft)
         console.log(directions)
+        textArea.value = JSON.stringify(directions)
     }   
     // Move Up
     if(e.keyCode==38){
         let commandDown = {pos: 'y', operator: '-'}
+        let textArea = document.getElementById('userDirections');
         directions.push(commandDown)
         console.log(directions)
+        textArea.value = JSON.stringify(directions)
     }
     //Move Down
     if(e.keyCode==40){
         let commandUp = {pos: 'y', operator: '+'}
+        let textArea = document.getElementById('userDirections');
         directions.push(commandUp)
         console.log(directions)
+        textArea.value = JSON.stringify(directions)
     }
     if(e.keyCode==13)
         {
@@ -150,9 +156,5 @@ function recordMove(e){
                 
                 directions.length = 0
         }
-    
-    // canvas.width=canvas.width;
-    // context.rect(xPos, yPos, 50, 50);
-    // context.stroke();
     }
     document.onkeydown = recordMove;
