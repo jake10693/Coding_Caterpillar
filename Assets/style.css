@@ -1,0 +1,10 @@
+canvas {
+    border: solid 1px #fff;
+    border-left: none;
+    border-right: none;
+    image-rendering: pixelated;
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    float: bottom;
+    }
